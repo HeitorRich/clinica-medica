@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Clinica_Medica
+
+  # Conexão com o PostgreSQL local (banco "clinica_medica").
+  datasource:
+    url: jdbc:postgresql://localhost:5432/clinica_medica
+    username: postgres
+    password: "123456"
+    driver-class-name: org.postgresql.Driver
+
+  # Hibernate cria/atualiza as tabelas automaticamente a partir das entidades.
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    # Mantém a sessão aberta durante a serialização do JSON, permitindo
+    # que os relacionamentos (listas) sejam carregados sob demanda.
+    open-in-view: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    deserialization:
+      # Jackson 3 recusa null/ausente em tipos primitivos por padrão;
+      # desligamos para que campos como "id" possam ser omitidos no JSON.
+      fail-on-null-for-primitives: false
