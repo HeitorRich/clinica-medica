@@ -1,0 +1,121 @@
+
+  :root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --ok: #16a34a;
+    --danger: #dc2626;
+  }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: var(--primary);
+    color: #fff;
+    padding: 18px 24px;
+  }
+  header h1 { margin: 0 0 4px; font-size: 20px; }
+  header p { margin: 0; font-size: 13px; opacity: .9; }
+  header a { color: #fff; }
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 12px 24px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  .tabs button {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .tabs button.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+  main { padding: 20px 24px 60px; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  .card h2 { margin: 0 0 12px; font-size: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+  label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+  input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  button.btn {
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    padding: 9px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  button.btn:hover { background: var(--primary-dark); }
+  button.btn.secondary { background: #eef2ff; color: var(--primary-dark); }
+  .form-actions { margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { background: #f9fafb; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: var(--muted); }
+  tr:hover td { background: #fafbff; }
+  .row-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .row-actions button {
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 4px 9px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .row-actions button:hover { border-color: var(--primary); color: var(--primary-dark); }
+  .row-actions button.danger:hover { border-color: var(--danger); color: var(--danger); }
+  #output {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    width: 420px;
+    max-height: 46vh;
+    background: #0f172a;
+    color: #d1e7ff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    overflow: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    display: none;
+  }
+  #output.show { display: block; }
+  #output .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; color: #93c5fd; }
+  #output .head button { background: transparent; border: none; color: #93c5fd; cursor: pointer; font-size: 14px; }
+  #output pre { margin: 0; white-space: pre-wrap; word-break: break-word; }
+  .empty { color: var(--muted); font-size: 13px; padding: 10px 0; }
+  .hint { font-size: 12px; color: var(--muted); }

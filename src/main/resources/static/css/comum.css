@@ -1,0 +1,7 @@
+/* =========================================================================
+   Regras minimas compartilhadas pelas duas telas.
+   O restante do estilo e especifico de cada pagina (index.css e
+   crud-generico.css).
+   ========================================================================= */
+
+* { box-sizing: border-box; }
